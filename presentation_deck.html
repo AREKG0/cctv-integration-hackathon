@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gujarat Sentinel Grid — Solution Presentation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .slide { display: none; }
+    .slide.active { display: flex; }
+  </style>
+</head>
+<body class="bg-[#0B132B] text-slate-100 font-sans h-screen w-screen flex flex-col justify-between p-6 overflow-hidden">
+
+  <!-- TOP HEADER -->
+  <header class="flex justify-between items-center border-b border-slate-700/80 pb-3">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-blue-600/30 border border-blue-500/50 flex items-center justify-center font-bold text-blue-400">
+        🛡️
+      </div>
+      <div>
+        <h1 class="text-sm font-bold tracking-wider text-white">GUJARAT POLICE SENTINEL GRID</h1>
+        <p class="text-[11px] text-slate-400">Official Presentation Deck — Innovation Challenge 2026</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3 font-mono text-xs">
+      <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+        MODEL 5: HYBRID ARCHITECTURE
+      </span>
+    </div>
+  </header>
+
+  <!-- SLIDE CONTENT CONTAINER -->
+  <main class="flex-1 flex my-4 relative overflow-hidden bg-[#1C2541] border border-slate-700/80 rounded-2xl p-8 shadow-2xl">
+    
+    <!-- SLIDE 1: TITLE -->
+    <div class="slide active flex-col justify-center items-start w-full gap-6">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30 text-xs font-mono">
+        🚨 GUJARAT HOME DEPARTMENT HACKATHON
+      </div>
+      <h2 class="text-4xl font-extrabold tracking-tight text-white leading-tight">
+        Unified CCTV Integration &<br/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-300 to-emerald-400">
+          AI Public Safety Intelligence Platform
+        </span>
+      </h2>
+      <p class="text-slate-300 max-w-2xl text-base leading-relaxed">
+        An open-source, vendor-neutral platform connecting ~80,000 cameras across 26 government departments into a real-time GIS Command Center for law enforcement.
+      </p>
+      <div class="grid grid-cols-3 gap-4 w-full max-w-3xl mt-4 pt-4 border-t border-slate-700/80">
+        <div class="p-3 rounded-xl bg-[#0B132B] border border-slate-700">
+          <p class="text-xs text-slate-400">Target Scale</p>
+          <p class="text-lg font-bold text-emerald-400 font-mono">~80,000 Cameras</p>
+        </div>
+        <div class="p-3 rounded-xl bg-[#0B132B] border border-slate-700">
+          <p class="text-xs text-slate-400">Coverage Span</p>
+          <p class="text-lg font-bold text-blue-400 font-mono">1,000 KM Statewide</p>
+        </div>
+        <div class="p-3 rounded-xl bg-[#0B132B] border border-slate-700">
+          <p class="text-xs text-slate-400">Latency Budget</p>
+          <p class="text-lg font-bold text-amber-400 font-mono">&lt; 200ms WebRTC</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: THE CHALLENGE -->
+    <div class="slide flex-col justify-center w-full gap-5">
+      <h3 class="text-xs font-mono text-blue-400 tracking-wider">PROBLEM STATEMENT</h3>
+      <h2 class="text-3xl font-bold text-white">The Core Challenge in Gujarat Public Safety</h2>
+      <div class="grid grid-cols-2 gap-4 mt-2">
+        <div class="p-5 rounded-xl bg-[#0B132B] border border-slate-700 space-y-2">
+          <h4 class="text-base font-semibold text-rose-400">1. Heterogeneous Infrastructure</h4>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            26 independent departments operating standalone VMS platforms, mixed analog/IP cameras, and different video retention periods (7 to 15+ days).
+          </p>
+        </div>
+        <div class="p-5 rounded-xl bg-[#0B132B] border border-slate-700 space-y-2">
+          <h4 class="text-base font-semibold text-amber-400">2. Geographical Dispersion</h4>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Camera sites distributed over 1,000 km ranging from border districts to Valsad, Dahod, Somnath, Jamnagar, and Dwarka.
+          </p>
+        </div>
+        <div class="p-5 rounded-xl bg-[#0B132B] border border-slate-700 space-y-2">
+          <h4 class="text-base font-semibold text-blue-400">3. Fragmented Databases</h4>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Government databases (VAHAN, SARTHI, eGujCop, NAFIS) operate in silos without automated video cross-referencing.
+          </p>
+        </div>
+        <div class="p-5 rounded-xl bg-[#0B132B] border border-slate-700 space-y-2">
+          <h4 class="text-base font-semibold text-emerald-400">4. Slow Criminal Search</h4>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Law enforcement currently spends hours manually reviewing isolated video feeds to trace stolen vehicles.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: ARCHITECTURE -->
+    <div class="slide flex-col justify-center w-full gap-5">
+      <h3 class="text-xs font-mono text-emerald-400 tracking-wider">SYSTEM DESIGN</h3>
+      <h2 class="text-3xl font-bold text-white">Hybrid Innovative Architecture (Model 5)</h2>
+      <div class="grid grid-cols-4 gap-3 mt-2">
+        <div class="p-4 rounded-xl bg-[#0B132B] border border-blue-500/40 text-xs space-y-2">
+          <div class="text-blue-400 font-bold">MODEL 1: GIS REGISTRY</div>
+          <p class="text-slate-300">Dynamic discovery via <code class="text-amber-300">/api/ingest</code>, camera health monitoring, and coverage gap analysis.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-[#0B132B] border border-teal-500/40 text-xs space-y-2">
+          <div class="text-teal-400 font-bold">MODEL 2: UNIFIED VIEWING</div>
+          <p class="text-slate-300">Low-latency WebRTC (WHEP) preview grid and RTSP stream feed aggregation.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-[#0B132B] border border-purple-500/40 text-xs space-y-2">
+          <div class="text-purple-400 font-bold">MODEL 3: VMS FEDERATION</div>
+          <p class="text-slate-300">Adapter plugin framework, RabbitMQ event bus, and cross-system correlation.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-[#0B132B] border border-emerald-500/40 text-xs space-y-2">
+          <div class="text-emerald-400 font-bold">MODEL 4: CENTRAL AI</div>
+          <p class="text-slate-300">PyTorch/YOLOv8 ANPR engine, PostGIS spatial route reconstruction, and watchlist alerts.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: EVALUATION TEST CASE -->
+    <div class="slide flex-col justify-center w-full gap-5">
+      <h3 class="text-xs font-mono text-amber-400 tracking-wider">EVALUATION TEST CASE DEMO</h3>
+      <h2 class="text-3xl font-bold text-white">Vehicle Trajectory & Route Reconstruction</h2>
+      <div class="p-5 rounded-xl bg-[#0B132B] border border-slate-700 flex flex-col gap-4 font-mono text-xs">
+        <div class="flex justify-between items-center border-b border-slate-700 pb-2">
+          <span class="text-slate-400">Target Vehicle:</span>
+          <span class="text-amber-400 font-bold text-sm">GJ01AB1234 (Stolen White Swift)</span>
+          <span class="text-rose-400 font-bold">MATCH: eGujCop FIR #2026-90412</span>
+        </div>
+        <div class="space-y-2 text-slate-300">
+          <div class="flex justify-between">
+            <span>📍 Hit #1 [04:04:58 PM]</span>
+            <span class="text-blue-400">Sector 18 Circle, Gandhinagar</span>
+          </div>
+          <div class="flex justify-between">
+            <span>📍 Hit #2 [04:04:58 PM]</span>
+            <span class="text-blue-400">SG Highway Junction, Ahmedabad</span>
+          </div>
+          <div class="flex justify-between">
+            <span>📍 Hit #3 [04:04:58 PM]</span>
+            <span class="text-blue-400">State Highway 81, Vadodara</span>
+          </div>
+          <div class="flex justify-between">
+            <span>📍 Hit #4 [04:04:58 PM]</span>
+            <span class="text-blue-400">Ring Road Checkpost, Surat</span>
+          </div>
+        </div>
+        <div class="p-3 bg-slate-900 rounded border border-slate-800 text-emerald-400">
+          ✓ PostGIS Spatial Polyline Generated: [[72.65, 23.223] ➔ [72.5714, 23.0225] ➔ [73.1812, 22.3072] ➔ [72.8311, 21.1702]]
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: COMPLIANCE -->
+    <div class="slide flex-col justify-center w-full gap-5">
+      <h3 class="text-xs font-mono text-emerald-400 tracking-wider">TECHNICAL COMPLIANCE</h3>
+      <h2 class="text-3xl font-bold text-white">Full Compliance with Official Rules</h2>
+      <div class="grid grid-cols-2 gap-4 text-xs">
+        <div class="p-4 rounded-xl bg-[#0B132B] border border-emerald-500/30 flex items-start gap-3">
+          <span class="text-emerald-400 font-bold text-lg">✓</span>
+          <div>
+            <p class="font-bold text-white">Forced RTSP over TCP</p>
+            <p class="text-slate-400">Eliminates UDP packet loss &amp; frame corruption across NATs/firewalls.</p>
+          </div>
+        </div>
+        <div class="p-4 rounded-xl bg-[#0B132B] border border-emerald-500/30 flex items-start gap-3">
+          <span class="text-emerald-400 font-bold text-lg">✓</span>
+          <div>
+            <p class="font-bold text-white">PTS Presentation Timestamps</p>
+            <p class="text-slate-400">Timing calculations use exact CAP_PROP_POS_MSEC, avoiding variable FPS errors.</p>
+          </div>
+        </div>
+        <div class="p-4 rounded-xl bg-[#0B132B] border border-emerald-500/30 flex items-start gap-3">
+          <span class="text-emerald-400 font-bold text-lg">✓</span>
+          <div>
+            <p class="font-bold text-white">Exponential Backoff Reconnects</p>
+            <p class="text-slate-400">Reconnects smoothly (2s to 30s) without gateway flooding.</p>
+          </div>
+        </div>
+        <div class="p-4 rounded-xl bg-[#0B132B] border border-emerald-500/30 flex items-start gap-3">
+          <span class="text-emerald-400 font-bold text-lg">✓</span>
+          <div>
+            <p class="font-bold text-white">Mixed H.264 &amp; H.265 Support</p>
+            <p class="text-slate-400">Dynamic decoder handling for multi-vendor camera feeds.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: CONCLUSION -->
+    <div class="slide flex-col justify-center items-center w-full gap-6 text-center">
+      <div class="p-4 rounded-full bg-emerald-500/20 text-emerald-400 text-3xl border border-emerald-500/40">
+        🏆
+      </div>
+      <h2 class="text-3xl font-extrabold text-white">Ready for Statewide Deployment</h2>
+      <p class="text-slate-300 max-w-xl text-sm leading-relaxed">
+        Gujarat Sentinel Grid delivers an intuitive, scalable, and open-source command center for law enforcement to protect public safety across Gujarat.
+      </p>
+      <div class="p-4 rounded-xl bg-[#0B132B] border border-slate-700 font-mono text-xs text-blue-400">
+        GitHub Repo: https://github.com/AREKG0/cctv-integration-hackathon
+      </div>
+    </div>
+
+  </main>
+
+  <!-- BOTTOM SLIDE CONTROLS -->
+  <footer class="flex justify-between items-center text-xs font-mono text-slate-400 border-t border-slate-700/80 pt-3">
+    <div>
+      Slide <span id="slide-num" class="text-white font-bold">1</span> of <span id="slide-total" class="text-white font-bold">6</span>
+    </div>
+    <div class="flex gap-2">
+      <button onclick="prevSlide()" class="px-4 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-200 transition">
+        ◄ Previous
+      </button>
+      <button onclick="nextSlide()" class="px-4 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold transition shadow-md">
+        Next ►
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    document.getElementById('slide-total').innerText = slides.length;
+
+    function showSlide(index) {
+      slides.forEach((s, i) => {
+        s.classList.toggle('active', i === index);
+      });
+      document.getElementById('slide-num').innerText = index + 1;
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'Space') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+  </script>
+</body>
+</html>
