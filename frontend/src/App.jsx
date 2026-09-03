@@ -37,7 +37,7 @@ function MapRecenter({ polyline }) {
 export default function App() {
   const [cameras, setCameras] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [searchPlate, setSearchPlate] = useState('GJ01AB1234');
+  const [searchPlate, setSearchPlate] = useState('');
   const [trajectory, setTrajectory] = useState(null);
   const [searchError, setSearchError] = useState('');
   const [alerts, setAlerts] = useState([]);
@@ -81,7 +81,11 @@ export default function App() {
   // 3. Search Vehicle Trajectory (Evaluation Test Endpoint)
   const handleSearch = async (e) => {
     if (e) e.preventDefault();
-    if (!searchPlate.trim()) return;
+    if (!searchPlate.trim()) {
+      setTrajectory(null);
+      setSearchError('');
+      return;
+    }
 
     setSearchError('');
     try {
@@ -96,11 +100,6 @@ export default function App() {
       setTrajectory(null);
     }
   };
-
-  // Auto-run initial evaluation search for 'GJ01AB1234'
-  useEffect(() => {
-    handleSearch();
-  }, []);
 
   // Format GIS Polyline points: convert [lng, lat] to [lat, lng] for Leaflet
   const polylineLatLngs = trajectory?.trajectory_polyline
